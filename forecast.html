@@ -107,7 +107,48 @@
     margin-bottom: 18px;
     color: var(--muted);
   }
+  .top-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(11, 16, 32, 0.92);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(12px);
+  }
 
+  .nav-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .nav-brand {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+  }
+
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+
+  .nav-links a:hover {
+    color: var(--accent);
+  }
   @media (max-width: 700px) {
     header {
       padding-top: 64px;
@@ -125,8 +166,22 @@
 </head>
 
 <body>
+<nav class="top-nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="#top">Australia 2030</a>
 
-  <header>
+    <div class="nav-links">
+      <a href="#thesis">Forecast</a>
+      <a href="#agents">Agents</a>
+      <a href="#productivity">Productivity</a>
+      <a href="#work">Work</a>
+      <a href="#scenarios">Scenarios</a>
+      <a href="#policy">Policy</a>
+      <a href="#references">Sources</a>
+    </div>
+  </div>
+</nav>
+  <header id="top">
     <h1>Australia 2030: The Agentic Economy</h1>
     <p>How AI agents will reshape Australian productivity, work and the structure of firms by 2030.</p>
   </header>
