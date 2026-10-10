@@ -2,47 +2,140 @@
 
 ## ECON1626 Assessment 3 – AI Future Forecast
 
-**Forecast question:** How will AI agents reshape Australian productivity, work and the structure of firms by 2030?
+**Forecast question:**  
+How will AI agents reshape Australian productivity, work and the structure of firms by 2030?
+
+**Live web essay:**  
+https://archieaaa.github.io/econ1626-ai-future-forecast/
+
+---
 
 ## Project Overview
 
 This project presents an interactive economic forecast of how agentic artificial intelligence may reshape the Australian economy by 2030.
 
-The central argument is that AI agents are more likely to transform bundles of cognitive tasks than eliminate entire occupations. Their economic impact will depend not only on improvements in AI capability, but also on business adoption, organisational redesign, complementary human skills and public policy.
+The central argument is that AI agents are likely to transform bundles of cognitive tasks more extensively than they eliminate entire occupations. As agents become capable of planning, using tools and completing multi-step workflows with less continuous human direction, the effective cost of some forms of knowledge work may fall.
 
-The forecast will examine how these forces affect productivity, employment and tasks, wages, firm structure and the distribution of economic gains.
+The economic effects will depend not only on AI capability, but also on business adoption, organisational redesign, complementary human skills, competition and public policy.
 
-## Forecast Scenarios
+---
 
-The essay will compare three possible trajectories for Australia:
+## Core Forecast
 
-- **Baseline – Managed Diffusion:** AI agents spread steadily through the economy, generating moderate productivity gains and gradual task restructuring.
-- **Upside – Broad Productivity Diffusion:** Strong adoption, worker adaptation and supportive institutions allow AI-driven productivity gains to spread widely.
-- **Downside – Concentrated Automation:** AI capabilities advance faster than labour-market and institutional adaptation, concentrating gains and increasing displacement and inequality.
+The forecast uses a task-based economic framework linking:
 
-## Planned Essay Structure
+**AI capability → cheaper cognitive workflows → task substitution and complementarity → organisational redesign → productivity and labour-market outcomes → distribution of gains**
 
-1. Landing / Thesis
-2. From Chatbots to Economic Agents
-3. When Intelligence Gets Cheaper
-4. Jobs Will Change Before They Disappear
-5. Three Australias in 2030
-6. Policy Changes the Forecast
-7. Industry Week: Testing the Forecast
-8. What Could Make This Forecast Wrong?
-9. Methods, Data and AI Disclosure
-10. References and Attributions
+The analysis focuses on:
 
-## Technical Deliverable
+- Australian productivity
+- task displacement and complementarity
+- worker adaptation and new task creation
+- firm structure and market concentration
+- distribution of productivity gains
+- public-policy trade-offs
 
-The final assessment will be presented as an interactive HTML web essay using GitHub Pages.
+---
 
-Main project files will include:
+## 2030 Scenarios
 
-- `README.md` – project overview and documentation
-- `forecast.html` – interactive web essay
-- Supporting CSS, JavaScript, data and visual assets where required
+Three structured scenarios are used rather than a single point prediction.
 
-## Development
+### Baseline – Managed Diffusion
+AI agents spread steadily through knowledge-intensive industries. Productivity improves, but adoption and worker adjustment remain uneven.
 
-The project will be developed progressively using Git and GitHub, with meaningful commits documenting research, writing, data analysis, visualisation and technical development.
+### Upside – Broad Productivity Diffusion
+Rapid adoption is matched by worker adaptation, organisational change and competitive access to AI. Productivity gains are higher and more broadly distributed.
+
+### Downside – Concentrated Automation
+AI capability advances faster than labour-market and institutional adaptation. Productivity may still rise, but adjustment pressure and firm concentration increase and gains become more concentrated.
+
+These scenarios are qualitative and conditional rather than econometric forecasts.
+
+---
+
+## Interactive Features
+
+The web essay includes:
+
+- an interactive **Chatbot → AI Copilot → AI Agent** capability explorer
+- an ABS-based visualisation of Australian business AI adoption
+- a five-stage economic mechanism diagram
+- an interactive **Baseline / Upside / Downside** scenario comparison
+- policy analysis including trade-offs and unintended consequences
+- an uncertainty section outlining conditions that could invalidate the forecast
+
+---
+
+## Evidence and Data
+
+Major evidence sources include:
+
+- Australian Bureau of Statistics – *Characteristics of Australian Business 2024–25*
+- Productivity Commission – *Productivity Update – September 2026*
+- Productivity Commission – *Harnessing Data and Digital Technology*
+- Jobs and Skills Australia – *Our Gen AI Transition – Exposure*
+- Australian Government – *National AI Plan*
+- ECON1626 Economics of Artificial Intelligence course materials
+- ECON1626 Industry Week discussion and post-event material
+
+Quantitative estimates from external sources are used as reference points rather than treated as precise predictions for 2030.
+
+---
+
+## Method
+
+The forecast combines:
+
+1. economic concepts from ECON1626
+2. Australian empirical evidence
+3. task-based analysis of automation and complementarity
+4. structured scenario analysis
+5. policy trade-off analysis
+6. explicit treatment of uncertainty
+
+Key assumptions varied across the scenarios include:
+
+- AI capability
+- rate of business adoption
+- worker adaptation
+- organisational redesign
+- competitive conditions
+- effectiveness of public policy
+
+---
+
+## Repository Structure
+
+- `index.html` – GitHub Pages entry point
+- `forecast.html` – complete interactive web essay
+- `README.md` – project documentation and methodology
+
+The project uses standard HTML, CSS and JavaScript and has no external build dependencies.
+
+---
+
+## Reproducibility
+
+The website can be reproduced by cloning or downloading this repository and opening `index.html` or `forecast.html` in a modern web browser.
+
+No external JavaScript frameworks or build tools are required.
+
+Git commit history documents the progressive development of the research, writing, visualisation and interactive components.
+
+---
+
+## AI Use Disclosure
+
+Generative AI tools were used to assist with research planning, drafting, HTML development, scenario design and organisation of evidence.
+
+AI-generated suggestions were reviewed, revised and checked against source material before inclusion. Final analytical choices, scenario assumptions and interpretations remain the author's responsibility.
+
+---
+
+## Author
+
+Archie Abbott  
+RMIT University  
+ECON1626 – Economics of Artificial Intelligence  
+Assessment 3 – AI Future Forecast
