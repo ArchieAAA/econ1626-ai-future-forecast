@@ -205,7 +205,89 @@
   border-left: 3px solid var(--accent-2);
   background: rgba(192, 132, 252, 0.08);
   font-weight: 600;
-}  
+}
+.scenario-dashboard {
+  margin: 32px 0 48px;
+  padding: 28px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+}
+
+.scenario-controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.scenario-btn {
+  padding: 10px 16px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.scenario-btn:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.scenario-btn.active {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+}
+
+.scenario-label {
+  margin-bottom: 6px;
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.scenario-summary h3 {
+  margin-bottom: 10px;
+  font-size: 1.6rem;
+}
+
+.scenario-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 26px;
+}
+
+.metric-card {
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.metric-card span {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.metric-card strong {
+  font-size: 1.15rem;
+  color: var(--text);
+}
+
+.scenario-note {
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-style: italic;
+}    
   @media (max-width: 700px) {
     header {
       padding-top: 64px;
@@ -330,7 +412,49 @@
       <p>
   The effect of AI agents on Australia by 2030 will depend on more than technical capability. The speed of business adoption, worker adaptation, organisational change, competition and public policy will determine whether productivity gains are broadly shared or concentrated. Three scenarios illustrate plausible trajectories rather than precise predictions.
 </p>
+<div class="scenario-dashboard">
 
+  <div class="scenario-controls">
+    <button class="scenario-btn active" data-scenario="baseline">Baseline</button>
+    <button class="scenario-btn" data-scenario="upside">Upside</button>
+    <button class="scenario-btn" data-scenario="downside">Downside</button>
+  </div>
+
+  <div class="scenario-summary">
+    <p class="scenario-label">2030 scenario</p>
+    <h3 id="scenario-title">Managed Diffusion</h3>
+    <p id="scenario-description">
+      AI adoption expands steadily, but productivity gains and worker adjustment remain uneven across firms and industries.
+    </p>
+  </div>
+
+  <div class="scenario-metrics">
+    <div class="metric-card">
+      <span>Productivity gains</span>
+      <strong id="metric-productivity">Moderate</strong>
+    </div>
+
+    <div class="metric-card">
+      <span>Worker adjustment pressure</span>
+      <strong id="metric-workers">Moderate</strong>
+    </div>
+
+    <div class="metric-card">
+      <span>Firm concentration</span>
+      <strong id="metric-concentration">Moderate</strong>
+    </div>
+
+    <div class="metric-card">
+      <span>Distribution of gains</span>
+      <strong id="metric-distribution">Uneven</strong>
+    </div>
+  </div>
+
+  <p class="scenario-note">
+    Qualitative comparison based on the assumptions in this forecast, not a point prediction.
+  </p>
+
+</div>
 <article class="scenario">
   <h3>Baseline: Managed Diffusion</h3>
   <p>
@@ -555,5 +679,67 @@
     });
   });
 </script>
+<script>
+  const scenarioData = {
+    baseline: {
+      title: "Managed Diffusion",
+      description:
+        "AI adoption expands steadily, but productivity gains and worker adjustment remain uneven across firms and industries.",
+      productivity: "Moderate",
+      workers: "Moderate",
+      concentration: "Moderate",
+      distribution: "Uneven"
+    },
+
+    upside: {
+      title: "Broad Productivity Diffusion",
+      description:
+        "Rapid adoption is matched by strong worker adaptation, organisational change and competitive access to AI, allowing gains to spread broadly across the economy.",
+      productivity: "High",
+      workers: "Lower",
+      concentration: "Lower",
+      distribution: "Broad"
+    },
+
+    downside: {
+      title: "Concentrated Automation",
+      description:
+        "AI capability advances faster than worker and institutional adaptation, concentrating productivity gains while increasing adjustment pressure and market power.",
+      productivity: "Moderate–High",
+      workers: "High",
+      concentration: "High",
+      distribution: "Concentrated"
+    }
+  };
+
+  const scenarioButtons = document.querySelectorAll(".scenario-btn");
+
+  scenarioButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      scenarioButtons.forEach(btn => btn.classList.remove("active"));
+      button.classList.add("active");
+
+      const selected = scenarioData[button.dataset.scenario];
+
+      document.getElementById("scenario-title").textContent =
+        selected.title;
+
+      document.getElementById("scenario-description").textContent =
+        selected.description;
+
+      document.getElementById("metric-productivity").textContent =
+        selected.productivity;
+
+      document.getElementById("metric-workers").textContent =
+        selected.workers;
+
+      document.getElementById("metric-concentration").textContent =
+        selected.concentration;
+
+      document.getElementById("metric-distribution").textContent =
+        selected.distribution;
+    });
+  });
+</script>  
 </body>
 </html>
