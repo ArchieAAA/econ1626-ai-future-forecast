@@ -149,6 +149,63 @@
   .nav-links a:hover {
     color: var(--accent);
   }
+  .agent-explorer {
+  margin: 32px 0 40px;
+  padding: 28px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+}
+
+.agent-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.agent-btn {
+  padding: 10px 16px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.agent-btn:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.agent-btn.active {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+}
+
+.agent-label {
+  margin-bottom: 6px;
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.agent-output h3 {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+}
+
+.agent-mechanism {
+  margin-top: 22px;
+  padding: 16px;
+  border-left: 3px solid var(--accent-2);
+  background: rgba(192, 132, 252, 0.08);
+  font-weight: 600;
+}  
   @media (max-width: 700px) {
     header {
       padding-top: 64px;
@@ -205,6 +262,25 @@
 
     <section id="agents">
       <h2>From Chatbots to Economic Agents</h2>
+      <div class="agent-explorer">
+  <div class="agent-buttons">
+    <button class="agent-btn active" data-agent="chatbot">Chatbot</button>
+    <button class="agent-btn" data-agent="copilot">AI Copilot</button>
+    <button class="agent-btn" data-agent="agent">AI Agent</button>
+  </div>
+
+  <div class="agent-output">
+    <p class="agent-label">Economic role</p>
+    <h3 id="agent-title">Assists with isolated tasks</h3>
+    <p id="agent-description">
+      A chatbot responds to individual prompts but does not independently continue working. Its main economic effect is to reduce the time required for specific cognitive tasks.
+    </p>
+
+    <div class="agent-mechanism">
+      <span id="agent-flow">Prompt → Response → Human continues</span>
+    </div>
+  </div>
+</div>
       <p>
   The economic significance of AI agents comes from action, not simply intelligence. A conventional chatbot responds to a prompt and stops. An agentic system can instead pursue a goal across multiple steps: it can gather information, make decisions, use software tools, observe the result of its actions and continue working with limited human direction.
 </p>
@@ -439,6 +515,45 @@
     </section>
 
   </main>
+<script>
+  const agentData = {
+    chatbot: {
+      title: "Assists with isolated tasks",
+      description:
+        "A chatbot responds to individual prompts but does not independently continue working. Its main economic effect is to reduce the time required for specific cognitive tasks.",
+      flow: "Prompt → Response → Human continues"
+    },
 
+    copilot: {
+      title: "Complements human workflows",
+      description:
+        "An AI copilot remains human-directed but can assist repeatedly within a workflow. This strengthens complementarity by allowing workers to complete more work within the same amount of time.",
+      flow: "Human directs → AI assists → Human evaluates → Human acts"
+    },
+
+    agent: {
+      title: "Executes multi-step workflows",
+      description:
+        "An AI agent can plan, use tools, observe outcomes and continue toward a goal with less continuous human direction. Economically, this allows capital to supply labour-like cognitive services across connected tasks.",
+      flow: "Goal → Plan → Act → Observe → Iterate → Complete"
+    }
+  };
+
+  const buttons = document.querySelectorAll(".agent-btn");
+
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+      buttons.forEach(btn => btn.classList.remove("active"));
+      button.classList.add("active");
+
+      const selected = agentData[button.dataset.agent];
+
+      document.getElementById("agent-title").textContent = selected.title;
+      document.getElementById("agent-description").textContent =
+        selected.description;
+      document.getElementById("agent-flow").textContent = selected.flow;
+    });
+  });
+</script>
 </body>
 </html>
