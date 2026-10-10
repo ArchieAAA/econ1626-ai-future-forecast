@@ -367,20 +367,75 @@
   color: var(--muted);
   font-size: 0.82rem;
   font-style: italic;
+}
+.mechanism-flow {
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+  margin: 36px 0 42px;
+}
+
+.mechanism-step {
+  flex: 1;
+  padding: 20px 16px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+.step-number {
+  display: block;
+  margin-bottom: 14px;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.mechanism-step strong {
+  display: block;
+  margin-bottom: 10px;
+  line-height: 1.25;
+  color: var(--text);
+}
+
+.mechanism-step p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.flow-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-2);
+  font-size: 1.35rem;
+  font-weight: 700;
 }    
   @media (max-width: 700px) {
-    header {
-      padding-top: 64px;
-    }
-
-    section {
-      padding: 48px 0;
-    }
-
-    header p {
-      font-size: 1.1rem;
-    }
+  header {
+    padding-top: 64px;
   }
+
+  section {
+    padding: 48px 0;
+  }
+
+  header p {
+    font-size: 1.1rem;
+  }
+
+  .mechanism-flow {
+    flex-direction: column;
+  }
+
+  .flow-arrow {
+    transform: rotate(90deg);
+    padding: 4px 0;
+  }
+}
 </style>
 </head>
 
@@ -505,7 +560,47 @@
       <p>
   Productivity is the key channel connecting AI capability to living standards. This matters particularly for Australia, where productivity growth has been weak. Productivity Commission data show that labour productivity fell by 0.2% over the year to June 2026 and remained only around 1% above its 2015–19 average. Agentic AI therefore arrives at a time when Australia has a strong economic incentive to find new ways of producing more output from its existing labour and capital.
 </p>
+<div class="mechanism-flow">
 
+  <div class="mechanism-step">
+    <span class="step-number">01</span>
+    <strong>More capable AI agents</strong>
+    <p>Planning, tool use and multi-step execution improve.</p>
+  </div>
+
+  <div class="flow-arrow">→</div>
+
+  <div class="mechanism-step">
+    <span class="step-number">02</span>
+    <strong>Cheaper cognitive workflows</strong>
+    <p>Firms can complete some knowledge tasks with less labour time.</p>
+  </div>
+
+  <div class="flow-arrow">→</div>
+
+  <div class="mechanism-step">
+    <span class="step-number">03</span>
+    <strong>Tasks are reorganised</strong>
+    <p>Some tasks are substituted while others become more productive through complementarity.</p>
+  </div>
+
+  <div class="flow-arrow">→</div>
+
+  <div class="mechanism-step">
+    <span class="step-number">04</span>
+    <strong>Firms redesign work</strong>
+    <p>Workflows, staffing and the boundary between labour and digital capital change.</p>
+  </div>
+
+  <div class="flow-arrow">→</div>
+
+  <div class="mechanism-step">
+    <span class="step-number">05</span>
+    <strong>Economic outcomes</strong>
+    <p>Productivity, wages, employment and the distribution of gains respond.</p>
+  </div>
+
+</div>
 <p>
   AI can be understood as a general-purpose technology: a technology capable of improving production across many industries rather than within a single narrow application. Agentic AI strengthens this mechanism because it can reduce the effective cost of complex cognitive workflows. If an employee supported by agents can complete more analysis, customer service, coding or administrative work in the same number of hours, labour productivity rises. If agents execute some workflows independently, firms may also expand output without increasing headcount proportionally.
 </p>
